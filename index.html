@@ -1,0 +1,2641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funke Helping Hand Foundation | Together We Make a Difference</title>
+    <meta name="description" content="Funke Helping Hand Foundation - Creating an atmosphere where everybody is reminded that we are in this world to help each other. Join us in making a difference across West Africa.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --primary: #1B4332;
+            --primary-light: #2D6A4F;
+            --primary-dark: #0F2A1D;
+            --secondary: #BC6C25;
+            --secondary-light: #DDA15E;
+            --accent: #FEFAE0;
+            --accent-dark: #D4A853;
+            --bg-primary: #FEFAE0;
+            --bg-secondary: #F5F0DC;
+            --bg-cream: #FFF8E7;
+            --bg-white: #FFFFFF;
+            --text-primary: #1B1B1B;
+            --text-secondary: #4A4A4A;
+            --text-muted: #6B6B6B;
+            --text-light: #FAFAFA;
+            --gradient-primary: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%);
+            --gradient-secondary: linear-gradient(135deg, #BC6C25 0%, #DDA15E 100%);
+            --gradient-warm: linear-gradient(180deg, #FEFAE0 0%, #F5F0DC 100%);
+            --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+            --shadow-xl: 0 16px 48px rgba(0,0,0,0.2);
+            --shadow-glow: 0 0 40px rgba(188, 108, 37, 0.3);
+            --radius-xs: 4px;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 32px;
+            --radius-full: 9999px;
+            --transition-fast: 0.15s ease;
+            --transition-base: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+        }
+
+        /* ===== Reset & Base ===== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(188, 108, 37, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(27, 67, 50, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-base);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ===== Typography ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--text-primary);
+        }
+
+        h1 {
+            font-size: clamp(3.5rem, 8vw, 5.5rem);
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            font-weight: 600;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== Buttons ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            font-family: var(--font-body);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: var(--transition-slow);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-secondary);
+            color: var(--text-light);
+            border-color: var(--secondary);
+            box-shadow: var(--shadow-md), var(--shadow-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border-color: rgba(255,255,255,0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-light);
+            color: var(--primary);
+            border-color: var(--text-light);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--text-light);
+        }
+
+        /* ===== Header ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: var(--transition-base);
+        }
+
+        .header.scrolled {
+            background: rgba(254, 250, 224, 0.92);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-sm);
+            padding: 12px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-family: var(--font-display);
+            font-size: 1.625rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+            padding: 6px;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-primary);
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition-base);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        .header-cta {
+            display: none;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.625rem;
+            color: var(--primary);
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: var(--gradient-primary);
+            padding: 120px 24px 80px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(ellipse, rgba(212, 168, 83, 0.15) 0%, transparent 70%);
+            animation: heroGlow 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            right: -10%;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(ellipse, rgba(188, 108, 37, 0.1) 0%, transparent 60%);
+            animation: heroGlow 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes heroGlow {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        .hero-shapes {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08;
+        }
+
+        .hero-shape-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--secondary);
+            top: 10%;
+            left: 5%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .hero-shape-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent-dark);
+            bottom: 20%;
+            right: 10%;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        .hero-shape-3 {
+            width: 150px;
+            height: 150px;
+            background: var(--secondary-light);
+            top: 60%;
+            left: 30%;
+            animation: float 12s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+            animation: heroFadeIn 1s ease-out;
+        }
+
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+            color: var(--accent-dark);
+            padding: 10px 24px;
+            border-radius: var(--radius-full);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .hero h1 {
+            color: var(--text-light);
+            margin-bottom: 28px;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+            font-weight: 700;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: var(--accent-dark);
+            font-style: italic;
+            font-weight: 600;
+            background: linear-gradient(135deg, #DDA15E 0%, #FEFAE0 50%, #DDA15E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-mission {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 48px;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9375rem;
+            margin-top: 4px;
+        }
+
+        /* ===== Section Common ===== */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+            position: relative;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+            margin-bottom: 16px;
+            padding: 8px 20px;
+            background: rgba(188, 108, 37, 0.1);
+            border-radius: var(--radius-full);
+        }
+
+        .section-label::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+
+        .section-title {
+            margin-bottom: 20px;
+            position: relative;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            margin-top: 16px;
+            border-radius: var(--radius-full);
+        }
+
+        .section-header .section-title::after {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-subtitle {
+            max-width: 640px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== About Section ===== */
+        .about {
+            background: var(--bg-primary);
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: var(--transition-slow);
+        }
+
+        .about-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+        }
+
+        .about-image-accent {
+            position: absolute;
+            top: 30px;
+            left: -30px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--secondary);
+            border-radius: var(--radius-lg);
+            z-index: -1;
+        }
+
+        .about-image-stats {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: var(--bg-white);
+            padding: 24px 32px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            gap: 32px;
+        }
+
+        .about-stat {
+            text-align: center;
+        }
+
+        .about-stat-number {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .about-stat-label {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+
+        .about-content {
+            padding-left: 20px;
+        }
+
+        .about-content h2 {
+            margin-bottom: 24px;
+        }
+
+        .about-story {
+            font-size: 1.125rem;
+            margin-bottom: 36px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            transition: var(--transition-base);
+        }
+
+        .value-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            background: var(--bg-white);
+        }
+
+        .value-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-secondary);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .value-title {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1.0625rem;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
+
+        .value-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        .about-cta {
+            margin-top: 40px;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* ===== Impact Section ===== */
+        .impact {
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .impact .section-label {
+            background: rgba(255,255,255,0.15);
+            color: var(--accent-dark);
+        }
+
+        .impact .section-label::before {
+            background: var(--accent-dark);
+        }
+
+        .impact .section-title {
+            color: var(--text-light);
+        }
+
+        .impact .section-subtitle {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px;
+            position: relative;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 32px 24px;
+            background: rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            transition: var(--transition-base);
+        }
+
+        .stat-item:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateY(-8px);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        .stat-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(212, 168, 83, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            color: var(--accent-dark);
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(2.75rem, 5vw, 3.75rem);
+            font-weight: 700;
+            color: var(--accent-dark);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* ===== Programs Section ===== */
+        .programs {
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .programs::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(188, 108, 37, 0.3), transparent);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .program-card {
+            background: var(--bg-white);
+            padding: 40px 28px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            transition: var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition-base);
+        }
+
+        .program-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(188, 108, 37, 0.03) 0%, transparent 100%);
+            opacity: 0;
+            transition: var(--transition-base);
+        }
+
+        .program-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .program-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .program-card:hover::after {
+            opacity: 1;
+        }
+
+        .program-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            font-size: 2rem;
+            color: var(--primary);
+            transition: var(--transition-base);
+            position: relative;
+            z-index: 1;
+        }
+
+        .program-card:hover .program-icon {
+            background: var(--gradient-secondary);
+            color: var(--text-light);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .program-card h3 {
+            margin-bottom: 14px;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .program-card p {
+            font-size: 0.9375rem;
+            margin-bottom: 24px;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 1;
+        }
+
+        .program-link {
+            color: var(--secondary);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .program-link i {
+            transition: var(--transition-base);
+        }
+
+        .program-link:hover {
+            color: var(--primary);
+        }
+
+        .program-link:hover i {
+            transform: translateX(4px);
+        }
+
+        /* ===== How It Works ===== */
+        .how-it-works {
+            background: var(--bg-primary);
+        }
+
+        .steps-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .steps-line {
+            position: absolute;
+            top: 64px;
+            left: 15%;
+            right: 15%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent-dark));
+            border-radius: var(--radius-full);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            position: relative;
+        }
+
+        .step-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 88px;
+            height: 88px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-light);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            transition: var(--transition-base);
+        }
+
+        .step-number::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border: 2px dashed var(--secondary);
+            border-radius: var(--radius-lg);
+            opacity: 0.3;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .step-item:nth-child(2) .step-number {
+            background: var(--gradient-secondary);
+        }
+
+        .step-item:nth-child(3) .step-number {
+            background: var(--accent-dark);
+            color: var(--text-primary);
+        }
+
+        .step-item:hover .step-number {
+            transform: scale(1.08);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .step-item h3 {
+            margin-bottom: 14px;
+        }
+
+        .step-item p {
+            max-width: 300px;
+            margin: 0 auto;
+            color: var(--text-muted);
+        }
+
+        /* ===== Testimonials ===== */
+        .testimonials {
+            background: var(--bg-cream);
+            position: relative;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 10% 10%, rgba(188, 108, 37, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 90% 90%, rgba(27, 67, 50, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-white);
+            padding: 44px 36px;
+            border-radius: var(--radius-lg);
+            position: relative;
+            transition: var(--transition-base);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 24px;
+            left: 28px;
+            font-size: 4rem;
+            color: var(--secondary);
+            opacity: 0.15;
+            font-family: var(--font-display);
+            line-height: 1;
+        }
+
+        .testimonial-quote {
+            font-size: 1.0625rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.85;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 24px;
+            border-top: 1px solid var(--bg-secondary);
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--bg-secondary);
+            transition: var(--transition-base);
+        }
+
+        .testimonial-card:hover .testimonial-avatar {
+            border-color: var(--secondary);
+            transform: scale(1.05);
+        }
+
+        .testimonial-info h4 {
+            font-family: var(--font-body);
+            font-size: 1.0625rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .testimonial-info span {
+            font-size: 0.875rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        /* ===== Gallery ===== */
+        .gallery {
+            background: var(--bg-primary);
+            padding-bottom: 0;
+        }
+
+        .gallery-wrapper {
+            position: relative;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item:first-child {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(27, 67, 50, 0.8) 0%, transparent 60%);
+            opacity: 0;
+            transition: var(--transition-base);
+            display: flex;
+            align-items: flex-end;
+            padding: 24px;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay span {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Video Styles */
+        .gallery-video {
+            width: 100%;
+            height: 100%;
+            background: var(--text-primary);
+            position: relative;
+        }
+
+        .gallery-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-video .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 64px;
+            height: 64px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-base);
+            z-index: 2;
+        }
+
+        .gallery-video .play-btn i {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-left: 4px;
+        }
+
+        .gallery-video:hover .play-btn {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-video::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            pointer-events: none;
+            transition: var(--transition-base);
+        }
+
+        .gallery-video:hover::after {
+            background: rgba(0,0,0,0.2);
+        }
+
+        .gallery-video-label {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 3;
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 0.9375rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .video-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--secondary);
+            color: var(--text-light);
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 3;
+        }
+
+        /* ===== Get Involved ===== */
+        .get-involved {
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .get-involved::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(212, 168, 83, 0.2) 0%, transparent 70%);
+        }
+
+        .get-involved::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(188, 108, 37, 0.15) 0%, transparent 70%);
+        }
+
+        .get-involved .section-label {
+            background: rgba(255,255,255,0.15);
+            color: var(--accent-dark);
+        }
+
+        .get-involved .section-label::before {
+            background: var(--accent-dark);
+        }
+
+        .get-involved .section-title {
+            color: var(--text-light);
+        }
+
+        .get-involved-content {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 64px;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .donate-section {
+            text-align: center;
+            padding: 48px 40px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            transition: var(--transition-base);
+        }
+
+        .donate-section:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .donate-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 2rem;
+            color: var(--text-light);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .donate-section h3 {
+            color: var(--text-light);
+            margin-bottom: 16px;
+            font-size: 1.75rem;
+        }
+
+        .donate-section p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 28px;
+        }
+
+        .donate-btn {
+            background: var(--gradient-secondary);
+            color: var(--text-light);
+            font-size: 1rem;
+            padding: 18px 48px;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .donate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+        }
+
+        .volunteer-form {
+            background: var(--bg-white);
+            padding: 48px;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .volunteer-form h3 {
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            font-size: 1.625rem;
+        }
+
+        .volunteer-form > p {
+            margin-bottom: 36px;
+            color: var(--text-muted);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            font-size: 0.9375rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 16px 20px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            border: 2px solid var(--bg-secondary);
+            border-radius: var(--radius-md);
+            background: var(--bg-primary);
+            transition: var(--transition-base);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--bg-white);
+            box-shadow: 0 0 0 4px rgba(27, 67, 50, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: #999;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group.error input,
+        .form-group.error select {
+            border-color: #DC2626;
+        }
+
+        .error-message {
+            color: #DC2626;
+            font-size: 0.8125rem;
+            margin-top: 8px;
+            display: none;
+            font-weight: 500;
+        }
+
+        .form-group.error .error-message {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .form-success.show {
+            display: block;
+        }
+
+        .form-success i {
+            font-size: 4.5rem;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 24px;
+        }
+
+        .form-success h3 {
+            margin-bottom: 12px;
+            font-size: 1.5rem;
+        }
+
+        .form-success p {
+            color: var(--text-muted);
+        }
+
+        /* ===== Partners ===== */
+        .partners {
+            background: var(--bg-white);
+            padding: 80px 0;
+            border-top: 1px solid var(--bg-secondary);
+            border-bottom: 1px solid var(--bg-secondary);
+        }
+
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+
+        .partner-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 180px;
+            height: 80px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-md);
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9375rem;
+            transition: var(--transition-base);
+            border: 1px solid var(--bg-secondary);
+        }
+
+        .partner-logo:hover {
+            background: var(--bg-white);
+            border-color: var(--secondary);
+            color: var(--secondary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--text-primary);
+            color: var(--text-light);
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-about .logo {
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        .footer-about .logo-icon {
+            background: var(--bg-white);
+            padding: 4px;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.65);
+            margin-bottom: 28px;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 14px;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-base);
+            font-size: 1.125rem;
+        }
+
+        .social-link:hover {
+            background: var(--secondary);
+            transform: translateY(-4px);
+        }
+
+        .footer-column h4 {
+            font-family: var(--font-body);
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 28px;
+            color: var(--text-light);
+        }
+
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.65);
+            transition: var(--transition-base);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-light);
+            padding-left: 6px;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 18px;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .footer-contact i {
+            color: var(--secondary-light);
+            margin-top: 4px;
+            width: 20px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 16px 20px;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background: rgba(255,255,255,0.1);
+            color: var(--text-light);
+            transition: var(--transition-base);
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .newsletter-form button {
+            padding: 16px 24px;
+            background: var(--gradient-secondary);
+            border: none;
+            border-radius: var(--radius-md);
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition-base);
+            font-size: 1.125rem;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0;
+            font-size: 0.9375rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 28px;
+        }
+
+        .footer-legal a {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9375rem;
+            transition: var(--transition-base);
+        }
+
+        .footer-legal a:hover {
+            color: var(--secondary-light);
+        }
+
+        /* ===== Animations ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 1200px) {
+            .about-grid {
+                gap: 60px;
+            }
+
+            .programs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 48px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .about-image-wrapper {
+                max-width: 550px;
+                margin: 0 auto;
+            }
+
+            .about-image img {
+                height: 450px;
+            }
+
+            .about-image-stats {
+                right: 20px;
+                bottom: -20px;
+            }
+
+            .about-content {
+                padding-left: 0;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid .testimonial-card:nth-child(3) {
+                grid-column: span 2;
+                max-width: 550px;
+                margin: 0 auto;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+            }
+
+            .gallery-item {
+                aspect-ratio: 4/3;
+            }
+
+            .gallery-item:first-child {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            .get-involved-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 72px 0;
+            }
+
+            .nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--bg-primary);
+                flex-direction: column;
+                padding: 32px;
+                gap: 24px;
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-150%);
+                transition: var(--transition-base);
+            }
+
+            .nav.active {
+                transform: translateY(0);
+            }
+
+            .nav-link {
+                font-size: 1.125rem;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .hero-stat {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                justify-content: center;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 56px;
+            }
+
+            .steps-line {
+                display: none;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .gallery-item {
+                aspect-ratio: 1/1;
+            }
+
+            .gallery-item:first-child {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid .testimonial-card:nth-child(3) {
+                grid-column: span 1;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            .volunteer-form {
+                padding: 36px 28px;
+            }
+
+            .partners-grid {
+                gap: 40px;
+            }
+
+            .partner-logo {
+                width: 140px;
+                height: 60px;
+                font-size: 0.8125rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item {
+                padding: 24px 20px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .about-image-stats {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                margin-top: 24px;
+                justify-content: center;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .gallery-item:first-child {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <img src="logo.png" alt="Funke Foundation Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: var(--radius-md);">
+                    </div>
+                    <span>Funke Helping Hand Foundation [FHHF]</span>
+                </a>
+                
+                <nav class="nav" id="nav">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#programs" class="nav-link">Programs</a>
+                    <a href="#impact" class="nav-link">Impact</a>
+                    <a href="#get-involved" class="nav-link">Get Involved</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#get-involved" class="btn btn-primary header-cta">Donate Now</a>
+                </nav>
+
+                <a href="#get-involved" class="btn btn-primary header-cta">Donate Now</a>
+                
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-shapes">
+            <div class="hero-shape hero-shape-1"></div>
+            <div class="hero-shape hero-shape-2"></div>
+            <div class="hero-shape hero-shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-heart"></i>
+                    <span>Making a Difference Since 2023</span>
+                </div>
+                <h1>Together, We Make <span>a Difference</span></h1>
+                <p class="hero-mission">Creating an atmosphere where everybody is reminded that we are in this world to help each other. Join us in building a stronger, more compassionate community across West Africa.</p>
+                <div class="hero-buttons">
+                    <a href="#get-involved" class="btn btn-primary">
+                        <i class="fas fa-heart"></i>
+                        Donate Now
+                    </a>
+                    <a href="#get-involved" class="btn btn-secondary">
+                        <i class="fas fa-hands-helping"></i>
+                        Volunteer
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">15K+</div>
+                        <div class="hero-stat-label">Lives Touched</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">8+</div>
+                        <div class="hero-stat-label">Projects</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">2</div>
+                        <div class="hero-stat-label">States</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrapper fade-in">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80" alt="Funke Helping Hand Foundation team helping community members" width="800" height="550">
+                    </div>
+                    <div class="about-image-accent"></div>
+                    <div class="about-image-stats">
+                        <div class="about-stat">
+                            <div class="about-stat-number">2023</div>
+                            <div class="about-stat-label">Founded</div>
+                        </div>
+                        <div class="about-stat">
+                            <div class="about-stat-number">15K+</div>
+                            <div class="about-stat-label">Helped</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content fade-in">
+                    <span class="section-label">About Us</span>
+                    <h2>Empowering Communities Since 2023</h2>
+                    <p class="about-story">Funke Helping Hand Foundation was established with a singular vision: to create meaningful change in communities across West Africa. What started as a small initiative has grown into a movement, touching lives and bringing hope to thousands.</p>
+                    <p>We believe in sustainable solutions that empower individuals and communities to build brighter futures for themselves—not just temporary aid, but lasting transformation.</p>
+                    
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div>
+                                <div class="value-title">Compassion</div>
+                                <p class="value-desc">Every action driven by genuine care</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <div class="value-title">Integrity</div>
+                                <p class="value-desc">Transparency in all we do</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div>
+                                <div class="value-title">Accountability</div>
+                                <p class="value-desc">Fully responsible to donors</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <div class="value-title">Community</div>
+                                <p class="value-desc">United in purpose</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-cta">
+                        <a href="#programs" class="btn btn-primary">
+                            <i class="fas fa-arrow-right"></i>
+                            Our Programs
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i>
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact" id="impact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Impact</span>
+                <h2 class="section-title">Transforming Lives Every Day</h2>
+                <p class="section-subtitle">Through the generous support of our donors and volunteers, we've been able to make significant strides in communities across the region.</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-target="15000">0</div>
+                    <div class="stat-label">Lives Touched</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-number" data-target="45">0</div>
+                    <div class="stat-label">Community Projects</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="stat-number" data-target="8">0</div>
+                    <div class="stat-label">States Reached</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="stat-number" data-target="2500">0</div>
+                    <div class="stat-label">Active Volunteers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs" id="programs">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Programs</span>
+                <h2 class="section-title">Initiatives That Change Lives</h2>
+                <p class="section-subtitle">We focus on four core areas where we believe we can create the most impactful, sustainable change.</p>
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card fade-in">
+                    <div class="program-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education & Literacy</h3>
+                    <p>Providing school supplies, scholarships, and literacy programs to ensure every child has access to quality education.</p>
+                    <a href="#get-involved" class="program-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Healthcare Access</h3>
+                    <p>Organizing medical outreach programs, providing essential medicines, and supporting healthcare facilities.</p>
+                    <a href="#get-involved" class="program-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-icon">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h3>Women Empowerment</h3>
+                    <p>Skills training, micro-finance opportunities, and mentorship programs for women's economic independence.</p>
+                    <a href="#get-involved" class="program-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Community Development</h3>
+                    <p>Building infrastructure, clean water solutions, and sustainable programs for lasting improvements.</p>
+                    <a href="#get-involved" class="program-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">How It Works</span>
+                <h2 class="section-title">Your Journey With Us</h2>
+                <p class="section-subtitle">Whether you want to donate or volunteer, we've made the process simple and impactful.</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="steps-line"></div>
+                <div class="steps-grid">
+                    <div class="step-item fade-in">
+                        <div class="step-number">1</div>
+                        <h3>Choose Your Way to Help</h3>
+                        <p>Decide how you'd like to contribute—whether through donations, monthly giving, or your time.</p>
+                    </div>
+                    
+                    <div class="step-item fade-in">
+                        <div class="step-number">2</div>
+                        <h3>Connect With Our Team</h3>
+                        <p>Fill out our simple form and our team will reach out to discuss opportunities.</p>
+                    </div>
+                    
+                    <div class="step-item fade-in">
+                        <div class="step-number">3</div>
+                        <h3>See Your Impact</h3>
+                        <p>Receive regular updates on how your contribution makes a real difference.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title">Voices From Our Community</h2>
+                <p class="section-subtitle">Hear from the people whose lives have been touched by your generosity.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <span class="quote-icon">"</span>
+                    <p class="testimonial-quote">The scholarship program changed my life. I completed my education and now give back to my community as a teacher. This foundation believed in me when no one else did.</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&q=80" alt="Amara Okafor" class="testimonial-avatar" width="60" height="60">
+                        <div class="testimonial-info">
+                            <h4>Amara Okafor</h4>
+                            <span>Scholarship Beneficiary, 2020</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <span class="quote-icon">"</span>
+                    <p class="testimonial-quote">As a volunteer, I've seen how this foundation operates with integrity. Every donation goes exactly where it's supposed to. It's been rewarding to be part of something meaningful.</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="David Mensah" class="testimonial-avatar" width="60" height="60">
+                        <div class="testimonial-info">
+                            <h4>David Mensah</h4>
+                            <span>Volunteer, 3 Years</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <span class="quote-icon">"</span>
+                    <p class="testimonial-quote">The women's empowerment program gave me skills to start my own business. Today, I employ five other women. This foundation doesn't just give aid—it builds futures.</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80" alt="Grace Adeyemi" class="testimonial-avatar" width="60" height="60">
+                        <div class="testimonial-info">
+                            <h4>Grace Adeyemi</h4>
+                            <span>Program Graduate, 2021</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Gallery</span>
+                <h2 class="section-title">Moments of Impact</h2>
+                <p class="section-subtitle">A glimpse into the work we do and the lives we touch every day.</p>
+            </div>
+        </div>
+        
+        <div class="gallery-wrapper">
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="hands.jpg" alt="Community outreach program">
+                    <div class="gallery-overlay">
+                        <span>Community Outreach</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <div class="gallery-video">
+                        <video poster="kids.jpg" preload="metadata">
+                            <source src="video.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-btn" onclick="playVideo(this)">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <span class="video-badge">Video</span>
+                        <span class="gallery-video-label">Education Program</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="kids.jpg" alt="Volunteers working">
+                    <div class="gallery-overlay">
+                        <span>Our Volunteers</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <div class="gallery-video">
+                        <video poster="hands.jpg" preload="metadata">
+                            <source src="video.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-btn" onclick="playVideo(this)">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <span class="video-badge">Video</span>
+                        <span class="gallery-video-label">Women Empowerment</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="hands.jpg" alt="Healthcare outreach">
+                    <div class="gallery-overlay">
+                        <span>Medical Outreach</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved -->
+    <section class="get-involved" id="get-involved">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Get Involved</span>
+                <h2 class="section-title">Join the Movement</h2>
+                <p class="section-subtitle">Your contribution, whether time or resources, can help transform lives in our communities.</p>
+            </div>
+            
+            <div class="get-involved-content">
+                <div class="donate-section fade-in">
+                    <div class="donate-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Make a Donation</h3>
+                    <p>Your generous donation directly supports our programs and helps us reach more communities in need.</p>
+                    <a href="#" class="btn donate-btn" onclick="alert('Thank you for your interest in donating! This would connect to your donation platform.'); return false;">
+                        <i class="fas fa-heart"></i>
+                        Donate Now
+                    </a>
+                </div>
+                
+                <div class="volunteer-form fade-in">
+                    <h3>Become a Volunteer</h3>
+                    <p>Join our team of dedicated volunteers and make a hands-on difference in your community.</p>
+                    
+                    <form id="volunteer-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="vol-name">Full Name *</label>
+                                <input type="text" id="vol-name" name="name" placeholder="Enter your full name" required>
+                                <span class="error-message"><i class="fas fa-exclamation-circle"></i> Please enter your name (at least 2 characters)</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vol-email">Email Address *</label>
+                                <input type="email" id="vol-email" name="email" placeholder="Enter your email address" required>
+                                <span class="error-message"><i class="fas fa-exclamation-circle"></i> Please enter a valid email address</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="vol-interest">Area of Interest *</label>
+                            <select id="vol-interest" name="interest" required>
+                                <option value="">Select an area</option>
+                                <option value="education">Education & Literacy</option>
+                                <option value="healthcare">Healthcare Access</option>
+                                <option value="women">Women Empowerment</option>
+                                <option value="general">General Volunteering</option>
+                            </select>
+                            <span class="error-message"><i class="fas fa-exclamation-circle"></i> Please select an area of interest</span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Application
+                        </button>
+                    </form>
+                    
+                    <div class="form-success" id="form-success">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Thank You!</h3>
+                        <p>Your volunteer application has been submitted successfully. Our team will reach out to you within 48 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="partners" id="partners">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Partners</span>
+                <h2 class="section-title">Collaborating for Change</h2>
+            </div>
+            
+            <div class="partners-grid">
+                <div class="partner-logo">Partner 1</div>
+                <div class="partner-logo">Partner 2</div>
+                <div class="partner-logo">Partner 3</div>
+                <div class="partner-logo">Partner 4</div>
+                <div class="partner-logo">Partner 5</div>
+                <div class="partner-logo">Partner 6</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">
+                            <img src="logo.png" alt="Funke Foundation Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: var(--radius-md);">
+                        </div>
+                        <span>Funke Foundation</span>
+                    </a>
+                    <p>Creating an atmosphere where everybody is reminded that we are in this world to help each other. Join us in making a difference across West Africa.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#programs">Our Programs</a></li>
+                        <li><a href="#impact">Our Impact</a></li>
+                        <li><a href="#get-involved">Get Involved</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Zone C, Apo Resettlement, Abuja, Nigeria 900211 </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+234 813 882 4727</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>funkehelpinghandfoundation@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Newsletter</h4>
+                    <p style="color: rgba(255,255,255,0.65); margin-bottom: 20px;">Stay updated with our latest news and impact stories.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" aria-label="Subscribe">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Funke Helping Hand Foundation. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const nav = document.getElementById('nav');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        mobileToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            if (nav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Sticky Header
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll Animations (Intersection Observer)
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        fadeElements.forEach(el => fadeObserver.observe(el));
+
+        // Counter Animation
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let counterAnimated = false;
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !counterAnimated) {
+                    counterAnimated = true;
+                    animateCounters();
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        const impactSection = document.querySelector('.impact');
+        counterObserver.observe(impactSection);
+
+        function animateCounters() {
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        stat.textContent = formatNumber(Math.floor(current));
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        stat.textContent = formatNumber(target) + '+';
+                    }
+                };
+
+                updateCounter();
+            });
+        }
+
+        function formatNumber(num) {
+            if (num >= 1000) {
+                return num.toLocaleString();
+            }
+            return num;
+        }
+
+        // Volunteer Form Validation
+        const volunteerForm = document.getElementById('volunteer-form');
+        const formSuccess = document.getElementById('form-success');
+
+        volunteerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            let isValid = true;
+            
+            // Name validation
+            const nameInput = document.getElementById('vol-name');
+            const nameGroup = nameInput.closest('.form-group');
+            if (nameInput.value.trim().length < 2) {
+                nameGroup.classList.add('error');
+                isValid = false;
+            } else {
+                nameGroup.classList.remove('error');
+            }
+            
+            // Email validation
+            const emailInput = document.getElementById('vol-email');
+            const emailGroup = emailInput.closest('.form-group');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                emailGroup.classList.add('error');
+                isValid = false;
+            } else {
+                emailGroup.classList.remove('error');
+            }
+            
+            // Interest validation
+            const interestInput = document.getElementById('vol-interest');
+            const interestGroup = interestInput.closest('.form-group');
+            if (!interestInput.value) {
+                interestGroup.classList.add('error');
+                isValid = false;
+            } else {
+                interestGroup.classList.remove('error');
+            }
+            
+            if (isValid) {
+                volunteerForm.style.display = 'none';
+                formSuccess.classList.add('show');
+            }
+        });
+
+        // Remove error state on input
+        document.querySelectorAll('.volunteer-form input, .volunteer-form select').forEach(input => {
+            input.addEventListener('input', () => {
+                input.closest('.form-group').classList.remove('error');
+            });
+        });
+
+        // Video Play Function
+        function playVideo(btn) {
+            const videoContainer = btn.closest('.gallery-video');
+            const video = videoContainer.querySelector('video');
+            
+            if (video.paused) {
+                video.play();
+                btn.innerHTML = '<i class="fas fa-pause"></i>';
+                btn.style.transform = 'translate(-50%, -50%)';
+            } else {
+                video.pause();
+                btn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        }
+
+        // Newsletter Form
+        const newsletterForm = document.getElementById('newsletter-form');
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const input = newsletterForm.querySelector('input');
+            if (input.value) {
+                alert('Thank you for subscribing to our newsletter!');
+                input.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
